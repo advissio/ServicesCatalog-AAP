@@ -47,8 +47,11 @@ const reducers = {
 };
 
 export function store(state: any, action: any) {
-  // AV ex const forStore: ActionReducer<State> = compose(combineReducers)(reducers);
-  const forStore: ActionReducer<State> = compose({}, combineReducers)(reducers);
+  // AV ex 
+//  const store: ActionReducer<State> = compose(combineReducers)(reducers);
+  // fine
+//  const forStore: ActionReducer<State> = combineReducers(reducers);
+  const forStore: ActionReducer<State> = combineReducers(reducers);
   return forStore(state, action);
 }
 
