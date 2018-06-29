@@ -5,7 +5,7 @@ import {
   APP_INITIALIZER
 }                              from '@angular/core';
 import { FormsModule }         from '@angular/forms';
-import { 
+import {
   HttpModule,
   RequestOptions,
   XHRBackend,

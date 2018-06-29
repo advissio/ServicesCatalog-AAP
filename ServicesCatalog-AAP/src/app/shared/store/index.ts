@@ -39,11 +39,14 @@ export interface State {
  * wrapping that in storeLogger. Remember that compose applies
  * the result from right to left.
  */
+
+const xxx = fromAuth.xReducerX;
+
 const reducers = {
-  settings:       fromSettings.reducer,
-  login:          fromAuth.reducer,
-  products:       fromProducts.reducer,
-  productDetails: fromProductDetails.reducer
+  settings:       fromSettings.reducer(null,null),
+  login:          fromAuth.reducer(null,null),
+  products:       fromProducts.reducer(null,null),
+  productDetails: fromProductDetails.reducer(null,null)
 };
 
 export function store(state: any, action: any) {
@@ -51,7 +54,7 @@ export function store(state: any, action: any) {
 //  const store: ActionReducer<State> = compose(combineReducers)(reducers);
   // fine
 //  const forStore: ActionReducer<State> = combineReducers(reducers);
-  const forStore: ActionReducer<State> = combineReducers(reducers);
+  const forStore: ActionReducer<State> = compose((combineReducers),reducers);
   return forStore(state, action);
 }
 

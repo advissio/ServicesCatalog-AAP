@@ -18,7 +18,9 @@ const INITIAL_STATE: State = {
   ]
 };
 
-export function reducer(state = INITIAL_STATE, action: settings.Actions): State {
+export function reducer(state: State = INITIAL_STATE, action: settings.Actions = <settings.Actions>null): State {
+  if (!action) return state;    
+    
   switch (action.type) {
     case settings.ActionTypes.SET_LANGUAGE: {
       return Object.assign({}, state, { selectedLanguage: action.payload });

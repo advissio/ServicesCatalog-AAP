@@ -15,7 +15,7 @@ const INITIAL_STATE: State = {
   data:    []
 };
 
-export function reducer(state = INITIAL_STATE, action: actions.Actions): State {
+export function reducer(state: State = INITIAL_STATE, action: actions.Actions = <actions.Actions>null): State {
   if (!action) return state;
 
   switch (action.type) {

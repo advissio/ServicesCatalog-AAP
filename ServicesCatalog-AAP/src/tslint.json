@@ -15,6 +15,9 @@
         ],
         "whitespace": [
             false
+        ],
+        "import-spacing": [
+            false
         ]
     }
 }
